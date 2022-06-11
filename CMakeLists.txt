@@ -13,7 +13,7 @@ project(${CONAN_PACKAGE_NAME}_PROJECT VERSION ${CONAN_PACKAGE_VERSION})
 include(traact_default_library_setup)
 
 # add your source files here
-set(COMPONENT_SRC )
+set(COMPONENT_SRC src/traact/PointCloud.h src/traact/PointCloud.cpp)
 
 
 add_library(${CONAN_PACKAGE_NAME} SHARED ${COMPONENT_SRC})
