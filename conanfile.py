@@ -7,23 +7,33 @@ class TraactPackage(ConanFile):
     python_requires = "traact_run_env/1.0.0@traact/latest"
     python_requires_extend = "traact_run_env.TraactPackageCmake"
 
-    name = "your_component_name"
+    name = "Point Cloud Datatypes and Components based on Open3D"
     description = "..."
-    url = ""
-    license = ""
-    author = ""
+    url = "https://github.com/traact/traact_component_pointcloud.git"
+    license = "MIT"
+    author = "Frieder Pankratz"
 
     settings = "os", "compiler", "build_type", "arch"
     compiler = "cppstd"
 
     def _options(self):
-        self.options["with_bodytracking"] = [True, False]
-        self.default_options["with_bodytracking"] = True
+        pass
 
     exports_sources = "src/*", "CMakeLists.txt"
+
+    # overwrite these dependencies
+    requires = (
+        "eigen/3.4.0"
+    )
 
     def requirements(self):
         # add your dependencies
         self.traact_requires("traact_vision", "latest")
-        if self.options.with_tests:
-            self.requires("gtest/[>=1.11.0]")
+        self.traact_requires("traact_spatial", "latest")
+        self.requires("open3d/0.15.0r1@camposs/stable")
+
+    def configure(self):
+        #self.options['open3d'].with_visualization = True
+        #self.options['open3d'].with_kinect = True
+        pass
+
