@@ -13,7 +13,7 @@ project(${CONAN_PACKAGE_NAME}_PROJECT VERSION ${CONAN_PACKAGE_VERSION})
 include(traact_default_library_setup)
 
 # add your source files here
-set(COMPONENT_SRC src/traact/component/Open3dCreatePointCloud.cpp src/traact/pointCloud.h src/traact/pointCloud.cpp src/traact/component/CudaCreatePointCloud.cpp src/traact/component/CudaComponentFunctions.cu src/traact/component/CudaComponentFunctions.cuh src/traact/component/CudaDownloadPointCloud.cpp src/traact/component/Open3dBuildPointCloud.cpp src/traact/component/CudaColorPointCloud.cpp src/traact/component/Open3dMultiCameraColorICP.cpp)
+set(COMPONENT_SRC src/traact/point_cloud/component/Open3DCreatePointCloud.cpp src/traact/point_cloud.h src/traact/point_cloud.cpp src/traact/point_cloud/component/CudaCreatePointCloud.cpp src/traact/point_cloud/component/CudaComponentFunctions.cu src/traact/point_cloud/component/CudaComponentFunctions.cuh src/traact/point_cloud/component/CudaDownloadPointCloud.cpp src/traact/point_cloud/component/Open3DBuildPointCloud.cpp src/traact/point_cloud/component/CudaColorPointCloud.cpp src/traact/point_cloud/component/Open3DMultiCameraColorICP.cpp src/traact/point_cloud/component/Open3DMultiwayRegistration.cpp src/traact/point_cloud/open3d_algorithms.cpp src/traact/point_cloud/open3d_algorithms.h src/traact/point_cloud/point_cloud_datatypes.h)
 
 
 add_library(${CONAN_PACKAGE_NAME} SHARED ${COMPONENT_SRC})

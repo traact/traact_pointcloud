@@ -1,6 +1,6 @@
 /** Copyright (C) 2022  Frieder Pankratz <frieder.pankratz@gmail.com> **/
 
-#include "pointCloud.h"
+#include "point_cloud.h"
 
 #include <traact/component/generic_components.h>
 
@@ -15,7 +15,7 @@ CREATE_POINT_CLOUD_COMPONENTS(Gate)
 }
 
 BEGIN_TRAACT_PLUGIN_REGISTRATION
-    REGISTER_DEFAULT_TRAACT_TYPE(traact::pointCloud::PointCloudHeader)
+    REGISTER_DEFAULT_TRAACT_TYPE(traact::point_cloud::PointCloudHeader)
     REGISTER_POINT_CLOUD_COMPONENTS(traact::component::facade::ApplicationAsyncSource)
     REGISTER_POINT_CLOUD_COMPONENTS(traact::component::facade::ApplicationSyncSink)
     REGISTER_POINT_CLOUD_COMPONENTS(traact::component::Buffer)

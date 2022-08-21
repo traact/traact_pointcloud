@@ -5,6 +5,7 @@
 #include <traact/component/CudaComponent.h>
 #include "CudaComponentFunctions.cuh"
 
+
 namespace traact::component {
 
 class CudaColorPointCloud : public CudaComponent {

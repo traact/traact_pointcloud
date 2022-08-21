@@ -2,24 +2,25 @@
 
 #include <traact/traact.h>
 #include <traact/vision.h>
-#include "traact/pointCloud.h"
+#include "traact/point_cloud.h"
 #include <open3d/Open3D.h>
+
 namespace traact::component {
 
 
-class Open3dCreatePointCloud : public Component {
+class Open3DCreatePointCloud : public Component {
  public:
     using InDepthImage = buffer::PortConfig<traact::vision::ImageHeader, 0>;
     using InDepthCalibrationImage = buffer::PortConfig<traact::vision::CameraCalibrationHeader, 1>;
 
-    using OutPointCloud = buffer::PortConfig<traact::pointCloud::PointCloudHeader, 0>;
+    using OutPointCloud = buffer::PortConfig<traact::point_cloud::PointCloudHeader, 0>;
 
-    explicit Open3dCreatePointCloud(const std::string &name) : Component(name) {}
+    explicit Open3DCreatePointCloud(const std::string &name) : Component(name) {}
 
     static pattern::Pattern::Ptr GetPattern(){
 
         pattern::Pattern::Ptr
-            pattern = std::make_shared<pattern::Pattern>("Open3dCreatePointCloud", traact::Concurrency::SERIAL, ComponentType::SYNC_FUNCTIONAL);
+            pattern = std::make_shared<pattern::Pattern>("Open3DCreatePointCloud", traact::Concurrency::SERIAL, ComponentType::SYNC_FUNCTIONAL);
 
         pattern->addConsumerPort<InDepthImage>("input_depth_image")
             .addConsumerPort<InDepthCalibrationImage>("input_depth_calibration")
@@ -51,10 +52,10 @@ class Open3dCreatePointCloud : public Component {
 
 
 };
-CREATE_TRAACT_COMPONENT_FACTORY(Open3dCreatePointCloud)
+CREATE_TRAACT_COMPONENT_FACTORY(Open3DCreatePointCloud)
 
 }
 
 BEGIN_TRAACT_PLUGIN_REGISTRATION
-    REGISTER_DEFAULT_COMPONENT(traact::component::Open3dCreatePointCloud)
+    REGISTER_DEFAULT_COMPONENT(traact::component::Open3DCreatePointCloud)
 END_TRAACT_PLUGIN_REGISTRATION

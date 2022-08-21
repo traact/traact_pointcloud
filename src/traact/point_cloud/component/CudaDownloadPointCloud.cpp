@@ -2,7 +2,7 @@
 
 #include <traact/traact.h>
 #include <traact/vision.h>
-#include <traact/pointCloud.h>
+#include "traact/point_cloud.h"
 #include <traact/component/CudaComponent.h>
 #include "CudaComponentFunctions.cuh"
 
@@ -13,7 +13,7 @@ class CudaDownloadPointCloud : public CudaComponent {
     using InPortPointCloud = buffer::PortConfig<vision::GpuImageHeader, 0>;
     
 
-    using OutPortPointCloud = buffer::PortConfig<pointCloud::PointCloudHeader, 0>;
+    using OutPortPointCloud = buffer::PortConfig<point_cloud::PointCloudHeader, 0>;
 
     explicit CudaDownloadPointCloud(const std::string &name) : CudaComponent(name) {
     }
