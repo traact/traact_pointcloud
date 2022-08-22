@@ -80,22 +80,21 @@ open3d::pipelines::registration::PoseGraph multiwayRegistration(MultiwayRegistra
     SPDLOG_INFO("start multiway registration");
     open3d::pipelines::registration::PoseGraph pose_graph;
 
-    // origin node
-    pose_graph.nodes_.emplace_back(Eigen::Matrix4d::Identity());
+
+
     for (auto i = 0; i < config.point_clouds.size(); ++i) {
         pose_graph.nodes_.emplace_back(config.origin_to_camera[i]);
-        pose_graph.edges_.emplace_back(0, i+1,config.origin_to_camera[i], Eigen::Matrix6d::Identity(), true);
     }
 
     for(const auto&[source_id, target_id, uncertain] : config.edges){
-        SPDLOG_INFO("apply point-to-plain ICP {0} : {1}", source_id+1, target_id+1);
+        SPDLOG_INFO("apply point-to-plain ICP {0} : {1}", source_id, target_id);
         Eigen::Matrix4d target_to_source = config.origin_to_camera[target_id].inverse() * config.origin_to_camera[source_id] ;
         auto [transformation_icp, information_icp] = pairwiseRegistration(config.point_clouds[source_id],
                                                                           config.point_clouds[target_id],
                                                                           config.max_correspondence_distance_coarse,
                                                                           config.max_correspondence_distance_fine,
                                                                           target_to_source);
-        pose_graph.edges_.emplace_back(source_id+1, target_id+1, transformation_icp, information_icp, uncertain);
+        pose_graph.edges_.emplace_back(source_id, target_id, transformation_icp, information_icp, uncertain);
     }
 
     SPDLOG_INFO("end multiway registration");
