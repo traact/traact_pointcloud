@@ -30,7 +30,8 @@ class TraactPackage(ConanFile):
         # add your dependencies
         self.traact_requires("traact_vision", "latest")
         self.traact_requires("traact_spatial", "latest")
-        self.requires("open3d/0.15.0r1@camposs/stable")
+        self.requires("open3d/0.16.1@camposs/stable")
+        #self.requires("fmt/9.1.0")
 
     def configure(self):
         #self.options['open3d'].with_visualization = True
