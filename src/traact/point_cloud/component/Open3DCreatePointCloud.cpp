@@ -3,8 +3,10 @@
 #include <traact/traact.h>
 #include <traact/vision.h>
 #include "traact/point_cloud.h"
-#include <open3d/Open3D.h>
-
+//#include <open3d/Open3D.h>
+#include <open3d/camera/PinholeCameraIntrinsic.h>
+#include <open3d/geometry/PointCloud.h>
+#include <open3d/geometry/Image.h>
 namespace traact::component {
 
 

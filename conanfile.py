@@ -1,40 +1,46 @@
 # /usr/bin/python3
 import os
-from conans import ConanFile, CMake, tools
-
+from conan import ConanFile
+from conan.tools.build import can_run
 
 class TraactPackage(ConanFile):
-    python_requires = "traact_run_env/1.0.0@traact/latest"
-    python_requires_extend = "traact_run_env.TraactPackageCmake"
+    python_requires = "traact_base/0.0.0@traact/latest"
+    python_requires_extend = "traact_base.TraactPackageCmake"
 
-    name = "Point Cloud Datatypes and Components based on Open3D"
-    description = "..."
+    name = "traact_component_pointcloud"
+    version = "0.0.0"
+    description = "Point Cloud Datatypes and Components based on Open3D"
     url = "https://github.com/traact/traact_component_pointcloud.git"
     license = "MIT"
     author = "Frieder Pankratz"
 
     settings = "os", "compiler", "build_type", "arch"
     compiler = "cppstd"
+    
+    exports_sources = "src/*", "include/*", "CMakeLists.txt"    
 
-    def _options(self):
-        pass
+    options = {
+        "shared": [True, False],
+        "trace_logs_in_release": [True, False]
+    }
 
-    exports_sources = "src/*", "CMakeLists.txt"
-
-    # overwrite these dependencies
-    requires = (
-        "eigen/3.4.0"
-    )
+    default_options = {
+        "shared": True,
+        "trace_logs_in_release": True
+    }
 
     def requirements(self):
         # add your dependencies
-        self.traact_requires("traact_vision", "latest")
-        self.traact_requires("traact_spatial", "latest")
-        self.requires("open3d/0.16.1@camposs/stable")
-        #self.requires("fmt/9.1.0")
+        self.requires("traact_vision/0.0.0@traact/latest")
+        self.requires("traact_spatial/0.0.0@traact/latest")
+        self.requires("open3d/0.17.0@camposs/stable", transitive_headers=True, transitive_libs=True)  
+              
 
     def configure(self):
         #self.options['open3d'].with_visualization = True
         #self.options['open3d'].with_kinect = True
         pass
+
+    def _after_package_info(self):        
+        self.cpp_info.libs = ["traact_component_pointcloud"]
 

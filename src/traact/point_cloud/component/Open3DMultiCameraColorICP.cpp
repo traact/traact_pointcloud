@@ -3,7 +3,7 @@
 #include <traact/vision.h>
 #include "traact/point_cloud.h"
 
-#include <open3d/Open3D.h>
+//#include <open3d/Open3D.h>
 #include "traact/point_cloud/open3d_algorithms.h"
 namespace traact::component {
 

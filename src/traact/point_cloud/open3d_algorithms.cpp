@@ -1,6 +1,8 @@
 /** Copyright (C) 2022  Frieder Pankratz <frieder.pankratz@gmail.com> **/
 
-#include "open3d_algorithms.h"
+#include "traact/point_cloud/open3d_algorithms.h"
+
+#include "open3d/pipelines/registration/ColoredICP.h"
 
 namespace traact::point_cloud {
 

@@ -7,9 +7,10 @@
  * algorithms from the open3d examples and tutorials
  */
 
-#include <open3d/Open3D.h>
+//#include <open3d/Open3D.h>
 #include <spdlog/spdlog.h>
 #include "point_cloud_datatypes.h"
+#include <open3d/pipelines/registration/PoseGraph.h>
 
 namespace traact::point_cloud {
 

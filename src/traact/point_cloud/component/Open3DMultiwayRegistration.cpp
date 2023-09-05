@@ -3,7 +3,7 @@
 #include <traact/vision.h>
 #include "traact/point_cloud.h"
 
-#include <open3d/Open3D.h>
+//#include <open3d/Open3D.h>
 #include "traact/point_cloud/open3d_algorithms.h"
 #include <open3d/pipelines/registration/GlobalOptimization.h>
 
@@ -64,7 +64,7 @@ class Open3DMultiwayRegistration : public Component {
             return true;
         }
 
-        open3d::utility::SetVerbosityLevel(open3d::utility::VerbosityLevel::Debug);
+        //open3d::utility::SetVerbosityLevel(open3d::utility::VerbosityLevel::Debug);
 
         point_cloud::MultiwayRegistrationConfig registration_config(cameras_info_.size,
                                                                     max_correspondence_distance_course_,

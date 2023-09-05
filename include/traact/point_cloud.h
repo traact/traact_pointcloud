@@ -7,9 +7,7 @@
 
 #include <traact/traact.h>
 #include "point_cloud/point_cloud_datatypes.h"
-//#include <traact/traact_component_pointcloud_export.h>
-
-#define TRAACT_COMPONENT_POINTCLOUD_EXPORT
+#include <traact/traact_component_pointcloud_export.h>
 
 namespace traact::point_cloud {
 

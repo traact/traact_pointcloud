@@ -1,6 +1,6 @@
 /** Copyright (C) 2022  Frieder Pankratz <frieder.pankratz@gmail.com> **/
 
-#include "point_cloud.h"
+#include "traact/point_cloud.h"
 
 #include <traact/component/generic_components.h>
 
