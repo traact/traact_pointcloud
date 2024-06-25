@@ -3,5 +3,5 @@ cmake-build-debug/
 cmake-build-release/
 cmake-build-relwithdebinfo/
 .idea
-include/traact/traact_component_pointcloud_export.h
+include/traact/traact_pointcloud_export.h
 CMakeUserPresets.json

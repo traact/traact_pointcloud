@@ -1,7 +1,7 @@
 /** Copyright (C) 2022  Frieder Pankratz <frieder.pankratz@gmail.com> **/
 
-#ifndef TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_
-#define TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_
+#ifndef traact_pointcloud_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_
+#define traact_pointcloud_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_
 
 /**
  * algorithms from the open3d examples and tutorials
@@ -58,4 +58,4 @@ std::pair<Eigen::Matrix4d, Eigen::Matrix6d> pairwiseRegistration(const PointClou
 
 } // traact
 
-#endif //TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_
+#endif //traact_pointcloud_SRC_TRAACT_POINT_CLOUD_OPEN3D_ALGORITHMS_H_

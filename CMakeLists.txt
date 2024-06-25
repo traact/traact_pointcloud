@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(TARGET_NAME traact_component_pointcloud)
+set(TARGET_NAME traact_pointcloud)
 
 project(${TARGET_NAME} VERSION "0.0.0" LANGUAGES CXX)
 
@@ -25,7 +25,7 @@ find_package(open3d REQUIRED)
 
 target_link_libraries(${TARGET_NAME} traact_core::traact_core traact_spatial::traact_spatial traact_vision::traact_vision open3d::open3d)
 
-generate_export_header(${TARGET_NAME} EXPORT_FILE_NAME ${CMAKE_CURRENT_SOURCE_DIR}/include/traact/traact_component_pointcloud_export.h)
+generate_export_header(${TARGET_NAME} EXPORT_FILE_NAME ${CMAKE_CURRENT_SOURCE_DIR}/include/traact/traact_pointcloud_export.h)
 
 target_include_directories(${TARGET_NAME} PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

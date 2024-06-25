@@ -1,7 +1,7 @@
 /** Copyright (C) 2022  Frieder Pankratz <frieder.pankratz@gmail.com> **/
 
-#ifndef TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_
-#define TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_
+#ifndef traact_pointcloud_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_
+#define traact_pointcloud_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_
 
 #include <opencv2/cudaimgproc.hpp>
 #include <cuda.h>
@@ -20,4 +20,4 @@ void colorPointCloud(const cv::cuda::GpuMat &point_cloud, const cv::cuda::GpuMat
 
 } // traact
 
-#endif //TRAACT_COMPONENT_POINTCLOUD_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_
+#endif //traact_pointcloud_SRC_TRAACT_COMPONENT_CUDACOMPONENTFUNCTIONS_CUH_

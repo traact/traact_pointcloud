@@ -1,2 +1,1 @@
-# component_template
-Use as template to create new traact components
+Point Cloud Datatypes and Components based on Open3D

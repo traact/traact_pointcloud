@@ -7,10 +7,10 @@ class TraactPackage(ConanFile):
     python_requires = "traact_base/0.0.0@traact/latest"
     python_requires_extend = "traact_base.TraactPackageCmake"
 
-    name = "traact_component_pointcloud"
+    name = "traact_pointcloud"
     version = "0.0.0"
     description = "Point Cloud Datatypes and Components based on Open3D"
-    url = "https://github.com/traact/traact_component_pointcloud.git"
+    url = "https://github.com/traact/traact_pointcloud.git"
     license = "MIT"
     author = "Frieder Pankratz"
 
@@ -42,5 +42,5 @@ class TraactPackage(ConanFile):
         pass
 
     def _after_package_info(self):        
-        self.cpp_info.libs = ["traact_component_pointcloud"]
+        self.cpp_info.libs = ["traact_pointcloud"]
 
